@@ -1,0 +1,27 @@
+name: CI Pipeline
+
+on:
+    pull_request:
+
+permissions:
+    contents: write
+    id-token: write
+
+concurrency:
+    group: '${{ github.workflow }} @ ${{ github.event.pull_request.head.label || github.head_ref || github.ref }}'
+    cancel-in-progress: true
+
+jobs:
+    lint-dockerfile:
+      runs-on: ubuntu-latest
+      steps:
+        - name: Checkout
+          uses: actions/checkout@v4
+          with:
+            ref: ${{ github.event.pull_request.head.ref }}
+        
+        - name: Lint
+          uses: hadolint/hadolint-action@v3.1.0
+          with:
+            dockerfile: Dockerfile
+            config: .hadolint.yaml

@@ -1,0 +1,8 @@
+override:
+  error:
+    - DL3049 # Enforce labels
+failure-threshold: error
+label-schema:
+  org.opencontainers.image.authors: text
+  org.opencontainers.image.title: text
+  org.opencontainers.image.version: semver
