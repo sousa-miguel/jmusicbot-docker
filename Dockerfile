@@ -9,8 +9,8 @@ LABEL   org.opencontainers.image.authors="Miguel Sousa" \
 
 WORKDIR /app
 
-RUN gh release download --pattern "JMusicBot-*.jar" --repo jagrosh/MusicBot && \
-    mv JMusicBot-*.jar JMusicBot.jar
+RUN gh release download --pattern "JMusicBot-*.jar" --repo jagrosh/MusicBot 
+RUN mv JMusicBot-*.jar JMusicBot.jar
 
 FROM eclipse-temurin:19-jre-focal
 
