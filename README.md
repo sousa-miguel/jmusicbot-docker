@@ -8,4 +8,4 @@
 * Trigger CD Pipeline workflow
 ** by pushing to main branch
 ** or manually in the 'Actions' tab
-* ** Change visibility of your newly created GH package to private**
+* **Change visibility of your newly created GH package to private**
